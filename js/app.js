@@ -464,10 +464,10 @@ logOutbutton.onclick = () =>  {
 
         /*temp_gauge.style.setProperty("--percentage_temp", Math.round(mapping(TEMP_VAL, 0, 100, -90, 90)));
         temp_value.innerHTML = TEMP_VAL;*/
-
+        rmp_value.innerHTML = `${RPM_VAL} ${RPM_VAL > 0 ? "F" : RPM_VAL < 0 ? "R" : "OFF"}`;
+        RPM_VAL = Math.abs(RPM_VAL);
         let rpmAngle = mapping(RPM_VAL, 0, 3000, -45, 135);
         rpm_gauge.style.setProperty("--angle_rpm", `${rpmAngle}deg`);
-        rmp_value.innerHTML = `${RPM_VAL} ${RPM_VAL > 0 ? "F" : RPM_VAL < 0 ? "R" : "OFF"}`;
 
         // Update TEMP rotation (0 to 180 mapped to -90 to +90 degrees)
         let tempAngle = mapping(TEMP_VAL, 0, 180, -45,135);
